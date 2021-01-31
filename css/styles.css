@@ -1,0 +1,382 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root{
+    --clr-primary: #F70058;
+    --clr-dark: #0C0E36;
+    --clr-light: #FFFFFF;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --fw-black: 900;
+    --grid: minmax(1em, 10%)
+            minmax(10rem, 22ch)
+            minmax(10rem, 23ch) 
+            minmax(1em, 3fr)
+            max-content 
+            ;
+}
+
+body{
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--clr-dark);
+}
+
+header{
+    background-color: var(--clr-light);
+    text-align: center;
+    margin-top: .5em;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1em;
+    list-style: none;
+    font-size: .875rem;
+    font-weight: var(--fw-bold);
+    line-height: 1.025rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav__list-item{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__link:hover{
+    color: var(--clr-primary);
+}
+
+.weather{
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.weather__img{
+    grid-row: 1 / span 2;
+    background-color: var(--clr-primary);
+    padding: .5em;
+    display: flex;
+    justify-content: center;
+}
+
+.weather__info__text{
+    opacity: 50%;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: left;
+    margin-left: .75em;
+    letter-spacing: 1px;
+}
+
+.weather__info__text:first-of-type{
+    margin-top: 1rem;
+    position: relative;
+    margin-bottom: .5rem
+}
+
+.weather__info__text:last-of-type{
+    margin-bottom: 1rem;
+}
+
+#temperature{
+    margin-top: 1rem;
+    margin-bottom: .5rem
+}
+
+#snow_level{
+    margin-bottom: 1rem;
+}
+
+#temperature, #snow_level{
+    opacity: 100%;
+    display: flex;
+    position: relative;
+    margin-right: .75em;
+}
+
+.weather__info__text:first-of-type::after{
+    content: '';
+    position: absolute;
+    background: var(--clr-light);
+    opacity: .4;
+    width: 100%;
+    height: 1.5px;
+    bottom: -.25rem;
+    left: 0;
+}
+
+#temperature::after{
+    content: '';
+    position: absolute;
+    background: var(--clr-light);
+    opacity: .2;
+    width: 100%;
+    height: 1.5px;
+    bottom: -0.25rem;
+    left: 0;
+}
+
+.main{
+    padding: 3em 1em 10em;
+    margin-bottom: 0;
+}
+
+.main-skii{
+    background-image: url(../images/background.png);
+    background-size: cover;
+}
+
+.main__title{
+    font-weight: var(--fw-black);
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.main__content{
+   margin-top: 4em; 
+}
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .65em 1.2em;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: var(--fw-bold);
+    margin-bottom: .75em;
+}
+
+.btn + .btn {
+    margin-left: 1em;
+}
+
+.btn-primary{
+    color: var(--clr-light);
+    background-color: var(--clr-primary);
+}
+
+.btn-primary:hover{
+    background-color: var(--clr-dark);
+}
+
+.btn-outline{
+    outline: 3px solid;
+    outline-color: var(--clr-primary);
+    outline-offset: -3px;
+    color: var(--clr-primary);
+}
+
+.btn-outline:hover{
+    color: var(--clr-light);
+    background-color: var(--clr-dark);
+    outline-color: var(--clr-dark);
+}
+
+.footer{
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.element{
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.content{
+    margin: 1em;
+}
+
+.footer-social ul{
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-social li{
+    list-style: none;
+    padding: 1em;
+}
+
+.footer-social li a i{
+    color: var(--clr-primary);
+}
+
+.link{
+    color: var(--clr-primary);
+}
+
+.event{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    margin: 1em;
+}
+
+.event-img{
+    grid-row: 1 / span 2;
+    align-self: center;
+}
+
+.event-title{
+    margin: 0;
+}
+
+.event-date{
+    margin: 0;
+    opacity: 60%;
+}
+
+.day{
+    display: inline-flex;
+    align-items: center;
+}
+
+.day i{
+    margin-right: .5em;
+}
+
+.day p span{
+    color: var(--clr-primary);
+}
+
+.day {
+    margin-left: 1em;
+}
+
+.event-list{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.copyright{
+    opacity: 50%;
+}
+
+@media (min-width: 640px){
+    main{
+        display: grid;
+        grid-template-columns: var(--grid);
+        background-position: left bottom;
+    }
+
+    main > *{
+        grid-column: 2 / 4;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1400px){
+    .footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .links{
+        grid-row: 1;
+        grid-column: 1 / 2;
+        padding-bottom: 1em;
+    }
+
+    .latest-events{
+        grid-row: 1;
+        grid-column: 2 / 3;
+        padding-bottom: 1em;
+    }
+
+    .opening-hour{
+        grid-row: 2;
+        grid-column: 1 / 2;
+        padding-bottom: 1em;
+    }
+
+    .latest-events-imgs{
+        grid-row: 2;
+        grid-column: 2 / 3;
+        padding-bottom: 1em;
+    }
+}
+
+@media (min-width: 1000px){
+    header{
+        display: grid;
+        grid-template-columns: var(--grid);
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .logo,
+    .coglione,
+    .weather {
+        grid-row: 1;
+        margin: 0;
+    }
+
+    .logo{
+        grid-column: 2;
+        }
+
+    .coglione{
+        grid-column: 2 / 5;
+        justify-self: end;
+        margin-right: 3em;
+    }
+
+    .weather{
+        grid-column: -2 / -1;
+    }
+}
+
+@media (min-width: 1400px){
+    main{
+        background-position: center right;
+    }
+
+    .footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .links{
+        grid-column: 1 / 2;
+        padding-bottom: 1em;
+    }
+
+    .latest-events{
+        grid-column: 2 / 3;
+        padding-bottom: 1em;
+    }
+
+    .opening-hour{
+        grid-column: 3 / 4;
+        grid-row: 1;
+        padding-bottom: 1em;
+    }
+
+    .latest-events-imgs{
+        grid-column: 4 / 5;
+        grid-row: 1;
+        padding-bottom: 1em;
+    }
+}
